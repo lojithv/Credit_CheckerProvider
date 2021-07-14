@@ -6,7 +6,7 @@ class EligibilityScreen extends StatelessWidget {
 
   final ageController = TextEditingController();
 
-  int age = 0;
+  int salary = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +24,6 @@ class EligibilityScreen extends StatelessWidget {
                           return Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Container(
-                                width: 50,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: provider.isEligible == true ? Colors.green : Colors.orange
-                                ),
-                              ),
                               SizedBox(height: 50),
                               TextFormField(
                                 controller: ageController,
@@ -47,8 +39,8 @@ class EligibilityScreen extends StatelessWidget {
                                     color: Colors.black,
                                     textColor: Colors.white,
                                     onPressed: () {
-                                      age = int.parse(ageController.text.trim());
-                                      provider.checkEligibility(age);
+                                      salary = int.parse(ageController.text.trim());
+                                      provider.checkEligibility(salary);
                                     },)
                               ),
                               SizedBox(height: 50),

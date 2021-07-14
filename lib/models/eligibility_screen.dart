@@ -5,19 +5,19 @@ class EligibilityScreenProvider extends ChangeNotifier{
   bool _isEligible = false;
 
   String get eligibilityMessage => _eligibilityMessage;
-  bool get isEligible => _isEligible;
 
-  void checkEligibility(int age){
-     if (age == 0){
-      _eligibilityMessage = "Enter valid age";
-      _isEligible = false;
+  void checkEligibility(int salary){
+     if (salary >= 120000){
+      _eligibilityMessage = "Credit balance : 170, 000 LKR";
      }
-     else if (age > 18){
-        _eligibilityMessage = "You can Apply";
-        _isEligible = true;
-     } else {
-       _eligibilityMessage = "You cannot Apply";
-       _isEligible = false;
+     else if (salary >= 80000){
+       _eligibilityMessage = "Credit balance : 130, 000 LKR";
+     }
+     else if (salary >= 50000){
+       _eligibilityMessage = "Credit balance : 100, 000 LKR";
+     }
+     else {
+       _eligibilityMessage = "No Credit Balance";
      }
 
      notifyListeners();
