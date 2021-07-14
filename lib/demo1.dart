@@ -4,7 +4,7 @@ import 'models/eligibility_screen.dart';
 
 class EligibilityScreen extends StatelessWidget {
 
-  final ageController = TextEditingController();
+  final salaryController = TextEditingController();
 
   int salary = 0;
 
@@ -26,7 +26,7 @@ class EligibilityScreen extends StatelessWidget {
                             children: <Widget>[
                               SizedBox(height: 50),
                               TextFormField(
-                                controller: ageController,
+                                controller: salaryController,
                                 decoration: InputDecoration(
                                   hintText: 'Enter your Salary',
                                 ),
@@ -39,7 +39,7 @@ class EligibilityScreen extends StatelessWidget {
                                     color: Colors.black,
                                     textColor: Colors.white,
                                     onPressed: () {
-                                      salary = int.parse(ageController.text.trim());
+                                      salary = int.parse(salaryController.text.trim());
                                       provider.checkEligibility(salary);
                                     },)
                               ),
