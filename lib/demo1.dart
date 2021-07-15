@@ -6,7 +6,7 @@ class EligibilityScreen extends StatelessWidget {
 
   final salaryController = TextEditingController();
 
-  int salary = 0;
+  var salary;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class EligibilityScreen extends StatelessWidget {
                                     color: Colors.black,
                                     textColor: Colors.white,
                                     onPressed: () {
-                                      salary = int.parse(salaryController.text.trim());
+                                      salary = salaryController.text;
                                       provider.checkEligibility(salary);
                                     },)
                               ),
