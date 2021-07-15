@@ -9,17 +9,18 @@ class EligibilityScreenProvider extends ChangeNotifier{
   void checkEligibility(String salary){
     if (salary.isNotEmpty) {
       int amount = int.parse(salary);
-      if (amount >= 120000) {
-        _eligibilityMessage = "Credit balance : 170, 000 LKR";
+
+      if (amount >= 100000) {
+        _eligibilityMessage = "Loan amount = 5, 000, 000 LKR";
       }
-      else if (amount >= 80000) {
-        _eligibilityMessage = "Credit balance : 130, 000 LKR";
+      else if (amount >=  60000) {
+        _eligibilityMessage = "Loan amount = 2, 500, 000 LKR";
       }
-      else if (amount >= 50000) {
-        _eligibilityMessage = "Credit balance : 100, 000 LKR";
+      else if (amount >= 25000) {
+        _eligibilityMessage = " Loan amount = 1, 000, 000 LKR";
       }
       else {
-        _eligibilityMessage = "No Credit Balance";
+        _eligibilityMessage = "Cannot apply for loans";
       }
     }
     else{
